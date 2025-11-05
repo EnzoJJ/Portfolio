@@ -138,11 +138,27 @@ body {
     width: 100%;
     height: 50rem;
     display: flex;
-    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzc3ems1M2Z6aDljYzYyanN2ZHF4MHdveWZjNmk1cXFiMTlpZHZteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zBPy6z5iNPfOSnONpD/giphy.gif');
-    background-size: cover;
+    background-image: url('../img/17740155_159Z_2107.w026.n002.628B.p1.628.jpg');
+    background-size: 110%;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 10rem;
+    transition: background-position 0.2s ease;
 }
+.seccion-presentacion::before {
+  height: 50rem;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.63);
+  z-index: 1;
+}
+
+.seccion-presentacion > * {/*a los hijos de seccion presentacion los resaltamos*/
+  position: relative;
+  z-index: 2;
+}
+
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -225,7 +241,7 @@ body {
 /*Seccion sobre mi*/
 .seccion-sobremi{
     position: relative;
-    top: 5rem;
+    top: 2rem;
     font-family: 'Kdam Thmor Pro';
     font-style: normal;
     font-size: 20px;
@@ -335,6 +351,8 @@ body {
 
 /*Footer*/
   .footer {
+    position: relative;
+    top: 5rem;
     background-color: #353357;
     color: #ddd;
     text-align: center;
@@ -458,12 +476,16 @@ body {
     font-weight: 500;
     color: #fff;
   }
+  .seccion-presentacion{
+    height: 50rem;
+    background-size: cover;
+  }
   .lenguajes-presentacion p{
       font-size: 1rem;
       margin: auto 0.7rem;
   }
   .seccion-sobremi{
-    top: -3rem;
+    top: 0rem;
     font-size: 18px;
   }
   .seccion-proyectos h2 {
