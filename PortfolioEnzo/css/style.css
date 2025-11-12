@@ -437,6 +437,9 @@ body {
 /* Responsive */
 
 @media (max-width: 1024px){
+  .body{
+      overflow-x: hidden;
+  }
   .navbar {
     width: 90%;
     height: auto;
