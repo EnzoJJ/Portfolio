@@ -428,7 +428,7 @@ body {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  z-index: 1100;
+  z-index: 1300; /* keep above nav overlay */
 }
 
 .menu-toggle span {
@@ -465,9 +465,11 @@ body {
   }
   .menu-toggle {
     display: flex;
-    position: relative;
-    right: 10px;
-    z-index: 1201;
+    /* fixed so it's always visible on top of the full-screen nav overlay */
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    z-index: 1302;
   }
   .nav-links {
     position: fixed;
@@ -529,6 +531,12 @@ body {
   }
   .seccion-sobremi{
     top: -5rem;
+    font-size: 15px;
+  }
+  .seccion-sobremi p{
+      text-align: center;
+      width: 100%;
+      padding: 20px;
   }
   .linea-vertical{
       top: -7rem;
