@@ -7,6 +7,7 @@ body {
   font-style: normal;
   background-color: #1A192C;
   overflow-x: hidden;
+  width: 100%;
 }
 
 @keyframes fadeDown {
@@ -49,7 +50,7 @@ body {
   align-items: center;
   padding: 12px 40px;
   position: fixed;
-  width: 95vw;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -437,20 +438,22 @@ body {
 /* Responsive */
 
 @media (max-width: 1024px){
-  .body{
-      overflow-x: hidden;
+  body {
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
   .navbar {
-    width: 40%;
-    height: auto;
+    width: 100%;
+    left: 0;
   }
   .menu-toggle {
     display: flex;
     position: absolute;
-    right: 200px;
-    top: 20px;
+    right: 25px;
+    top: 18px;
     z-index: 1201;
   }
+
 
   .nav-links {
     position: fixed;
