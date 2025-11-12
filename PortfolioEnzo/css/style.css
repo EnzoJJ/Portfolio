@@ -465,7 +465,6 @@ body {
   }
   .menu-toggle {
     display: flex;
-    /* fixed so it's always visible on top of the full-screen nav overlay */
     position: fixed;
     top: 12px;
     right: 16px;
@@ -546,6 +545,9 @@ body {
   }
   .footer{
     top: 0rem;
+  }
+  .img-presentacion svg{
+      height: 24rem;
   }
 }
 @media (max-width: 768px){
