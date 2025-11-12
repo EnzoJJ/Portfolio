@@ -7,7 +7,6 @@ body {
   font-style: normal;
   background-color: #1A192C;
   overflow-x: hidden;
-  width: 100%;
 }
 
 @keyframes fadeDown {
@@ -75,7 +74,7 @@ body {
   list-style: none;
   display: flex;
   gap: 35px;
-  margin: 0;
+  margin: auto 100px;
   padding: 0;
 }
 
@@ -443,14 +442,13 @@ body {
     box-sizing: border-box;
   }
   .navbar {
-    width: 100%;
-    left: 0;
+    width: 90%;
+    height: auto;
   }
   .menu-toggle {
     display: flex;
-    position: absolute;
-    right: 25px;
-    top: 18px;
+    position: relative;
+    right: 0;
     z-index: 1201;
   }
 
