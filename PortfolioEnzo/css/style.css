@@ -495,9 +495,16 @@ body {
   .nav-links a {
     font-size: 15px;
   }
+  .lenguajes-presentacion{
+      height: 5rem;
+      top: 30rem;
+  }
   .lenguajes-presentacion p{
       margin: auto 3%;
       font-size: 10px;
+  }
+  .seccion-habilidades{
+      top: -5rem;
   }
   .seccion-habilidades svg{
       width: 100%;
@@ -513,6 +520,24 @@ body {
   }
   .linea-presentacion {
     display: none;
+  }
+  .seccion-presentacion{
+    height: 35rem;
+  }
+  .seccion-presentacion::before {
+    height: 35rem;
+  }
+  .seccion-sobremi{
+    top: -5rem;
+  }
+  .linea-vertical{
+      top: -7rem;
+  }
+  .seccion-proyectos{
+    top: -5rem;
+  }
+  .footer{
+    top: 0rem;
   }
 }
 @media (max-width: 768px){
