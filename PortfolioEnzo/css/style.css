@@ -62,7 +62,6 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 0.4s ease, color 0.4s ease;
-  cursor: pointer;
 }
 
 .logo:hover {
@@ -139,7 +138,7 @@ body {
     height: 50rem;
     display: flex;
     background-image: url('../img/17740155_159Z_2107.w026.n002.628B.p1.628.jpg');
-    background-size: 110%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 10rem;
@@ -360,7 +359,7 @@ body {
   }
   
   .contenedor-footer {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
   }
   
@@ -436,16 +435,16 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+
+@media (max-width: 1024px){
   .navbar {
     width: 90%;
+    height: auto;
   }
-
   .menu-toggle {
     display: flex;
     z-index: 1201;
   }
-
   .nav-links {
     position: fixed;
     top: 0;
@@ -464,49 +463,46 @@ body {
     transition: all 0.4s ease;
     z-index: 1200;
   }
-
   .nav-links.active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
   }
-
   .nav-links a {
-    font-size: 22px;
-    font-weight: 500;
-    color: #fff;
-  }
-  .seccion-presentacion{
-    height: 50rem;
-    background-size: cover;
+    font-size: 15px;
   }
   .lenguajes-presentacion p{
-      font-size: 1rem;
-      margin: auto 0.7rem;
+      margin: auto 3%;
+      font-size: 10px;
   }
-  .seccion-sobremi{
-    top: 0rem;
-    font-size: 18px;
-  }
-  .seccion-proyectos h2 {
-      font-size: 2rem;
-  }
-
   .seccion-habilidades svg{
-      width: 30rem;
+      width: 100%;
   }
   .img-presentacion {
-    left: -1rem;
-    width: 20rem;
+    left: 0rem;
+    width: 40%;
+    height: auto;
   }
   .text-presentacion {
-    left: 0.5rem;
-    width: 45rem;
+    left: 1rem;
+    width: 60%;
   }
-  .text-presentacion svg{
-      width: 100%;
-      height: 20rem;
+  .linea-presentacion {
+    display: none;
   }
 }
+@media (max-width: 768px){
+  .img-presentacion svg{
+      height: 25rem;
+  }
+  .text-presentacion {
+    top: 8rem;
+    font-size: 14px;
+    width: 70%;
+  }
+}
+
+
+
 
 
