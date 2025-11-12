@@ -442,13 +442,13 @@ body {
     box-sizing: border-box;
   }
   .navbar {
-    width: 90%;
+    max-width: 90%;
     height: auto;
   }
   .menu-toggle {
     display: flex;
     position: relative;
-    right: 0;
+    right: 10px;
     z-index: 1201;
   }
   .nav-links {
