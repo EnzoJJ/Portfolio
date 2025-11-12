@@ -441,17 +441,21 @@ body {
       overflow-x: hidden;
   }
   .navbar {
-    width: 90%;
+    width: 40%;
     height: auto;
   }
   .menu-toggle {
     display: flex;
+    position: absolute;
+    right: 200px;
+    top: 20px;
     z-index: 1201;
   }
+
   .nav-links {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0rem;
     width: 100%;
     height: 100vh;
     background: rgba(26, 25, 44, 0.986);
@@ -464,7 +468,7 @@ body {
     pointer-events: none;
     transform: translateY(-20px);
     transition: all 0.4s ease;
-    z-index: 1200;
+    z-index: 1201;
   }
   .nav-links.active {
     opacity: 1;
