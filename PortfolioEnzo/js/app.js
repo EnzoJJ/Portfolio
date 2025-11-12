@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
-  const links = navLinks.querySelectorAll('a'); // selecciona todos los enlaces del menú
+  const links = navLinks.querySelectorAll('a');
 
-  // Abrir/cerrar menú al presionar el botón hamburguesa
   menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
   });
 
-  // Cerrar menú al hacer clic en un enlace
   links.forEach(link => {
     link.addEventListener('click', () => {
       menuToggle.classList.remove('active');
