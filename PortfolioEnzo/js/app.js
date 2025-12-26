@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const logo = document.querySelector('.logo');
 
   if (menuToggle) {
-    // ensure accessibility attribute
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.addEventListener('click', () => {
       const isActive = menuToggle.classList.toggle('active');
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // allow clicking the logo to close the menu (acts as a close button)
   if (logo) {
     logo.setAttribute('role', 'button');
     logo.setAttribute('tabindex', '0');
