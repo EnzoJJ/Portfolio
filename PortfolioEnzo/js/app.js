@@ -81,3 +81,21 @@ document.addEventListener("mousemove", (event) => {
 seccion.addEventListener("mouseleave", () => {
   seccion.style.backgroundPosition = "50% 50%";
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+        const tarjetas = document.querySelectorAll('.card-publicidad');
+        let indexActual = 0;
+        const tiempoRotacion = 4000; // Tiempo en milisegundos (4 segundos por proyecto)
+
+        setInterval(() => {
+            // Quita la clase activa a la tarjeta actual
+            tarjetas[indexActual].classList.remove('active');
+
+            // Pasa a la siguiente tarjeta (y vuelve a 0 si llegó al final)
+            indexActual = (indexActual + 1) % tarjetas.length;
+
+            // Añade la clase activa a la nueva tarjeta
+            tarjetas[indexActual].classList.add('active');
+        }, tiempoRotacion);
+    });
