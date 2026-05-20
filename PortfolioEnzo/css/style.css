@@ -501,45 +501,179 @@ h2 {
   background: var(--accent-purple);
 }
 
-/* --- RESPONSIVE OPTIMIZADO --- */
+/* ==========================================================================
+   --- RESPONSIVE OPTIMIZADO Y CALIBRADO AL 100% (ENZO JATIP) ---
+   ========================================================================== */
+
+/* 1. TABLETS Y NOTEBOOKS CHICAS (Entre 1024px y 561px) */
 @media (max-width: 1024px) {
   .navbar {
     padding: 16px 24px;
   }
+
   .seccion-presentacion {
-    flex-direction: column-reverse;
-    justify-content: center;
+    flex-direction: column; /* Cambiamos a columna para el flujo vertical */
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
-    padding: 120px 4% 60px 4%;
+    padding: 120px 20px 40px 20px; /* Quitamos el 10% lateral que encoge el diseño */
     height: auto;
+    min-height: 100vh;
+    gap: 35px;
   }
+
+  /* Forzamos el orden correcto de lectura */
   .text-presentacion {
-    max-width: 100%;
-    margin-top: 40px;
+    order: 1;
+    width: 100%;       /* Ocupa todo el ancho en vez de la mitad */
+    max-width: 100%;  /* Anula el 50% de escritorio */
+    align-items: center;
+    padding: 20px;
+    background: radial-gradient(circle at center, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
   }
-  .text-presentacion h1 {
-    font-size: 2.5rem;
+
+  .publicidad-proyectos {
+    order: 2;
+    width: 100%;
+    max-width: 450px; /* Tamaño máximo para que respire en tablets */
+    height: 380px;
+    margin: 0 auto;
   }
-  .text-presentacion .software-dev {
-    font-size: 2rem;
-  }
-  .img-presentacion {
-    max-width: 70%;
-  }
+
   .lenguajes-presentacion {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 15px;
-    gap: 20px;
+    order: 3;
+    position: relative;
+    margin-top: 20px;
+    bottom: auto;
+    width: 100%;
+    padding: 16px;
+    gap: 15px;
+  }
+
+  .text-presentacion h1 {
+    font-size: 3.5rem;
+  }
+  .text-presentacion .nombre-dev {
+    font-size: 2.2rem;
+  }
+  .text-presentacion .rol-dev {
+    font-size: 1.9rem;
   }
 }
 
-@media (max-width: 600px) {
-  .contenedor-proyectos {
-    grid-template-columns: 1fr;
-    padding: 0;
+/* 2. CELULARES (De 560px para abajo - Expansión Completa al 100%) */
+@media (max-width: 560px) {
+  /* Navbar unificada en una sola línea horizontal sin romperse */
+  .navbar {
+    padding: 10px 14px;
+    flex-direction: row !important; /* Evita que mute a columna */
+    justify-content: space-between;
+    align-items: center;
   }
-  .img-presentacion {
-    max-width: 85%;
+
+  .logo {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  /* Expandimos la sección al 100% de la pantalla */
+  .seccion-presentacion {
+    padding: 100px 12px 30px 12px; /* Margen mínimo a los costados para máxima anchura */
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Bloque de texto usando todo el ancho disponible */
+  .text-presentacion {
+    width: 100% !important;     /* Forzamos uso completo de la pantalla */
+    max-width: 100% !important; /* Destruye definitivamente el 50% restrictivo */
+    padding: 10px 4px;
+    gap: 6px;
+  }
+
+  /* Escalado de fuentes móvil para que entren prolijas */
+  .text-presentacion h1 {
+    font-size: 2.4rem;
+  }
+  .text-presentacion .nombre-dev {
+    font-size: 1.7rem;
+  }
+  .text-presentacion .rol-dev {
+    font-size: 1.4rem;
+  }
+
+  .badge-bienvenida {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+  }
+
+  /* Tarjeta de publicidad ocupando el ancho del dispositivo */
+  .publicidad-proyectos {
+    width: 100% !important;     /* Toma el ancho del celular */
+    max-width: 100% !important; /* Permite estirarse hasta los límites laterales */
+    height: 350px;              /* Altura controlada para pantallas chicas */
+    margin: 0 auto;
+  }
+
+  .card-publicidad img {
+    height: 48%; /* Proporción balanceada para la captura */
+  }
+
+  .info-publicidad {
+    padding: 12px;
+    gap: 4px;
+  }
+
+  .info-publicidad h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-publicidad p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  /* Barra de lenguajes inferior estirada e integrada */
+  .lenguajes-presentacion {
+    width: 100% !important;
+    margin-top: 15px;
+    padding: 12px 6px;
+    gap: 8px;
+  }
+
+  .lenguajes-presentacion p {
+    font-size: 0.8rem;
+    padding: 2px 4px;
+  }
+
+  /* Ajustes para el resto de las secciones inferiores */
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .seccion-sobremi {
+    padding: 40px 12px;
+    max-width: 100%;
+  }
+
+  .seccion-sobremi p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .contenedor-proyectos {
+    grid-template-columns: 1fr; /* Una columna para tus tarjetas principales */
+    padding: 0 4px;
+    gap: 20px;
   }
 }
