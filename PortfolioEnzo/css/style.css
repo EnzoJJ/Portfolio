@@ -181,6 +181,7 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
 .hero-projects {
   flex: 1 1 360px;
   min-width: 280px;
+  max-height:600px;
   opacity: 0;
   animation: fadeUp 0.7s ease forwards 0.35s;
 }
