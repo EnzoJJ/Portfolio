@@ -113,10 +113,9 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
    HERO
    ========================================================= */
 .hero {
-  padding: 130px 6% 60px;
-  min-height: 100vh;
+  padding: 130px 6% 70px;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 36px;
   flex-wrap: wrap;
 }
@@ -129,7 +128,14 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
   box-shadow: 0 24px 60px rgba(0,0,0,0.35);
 }
 
-.code-window { flex: 1 1 560px; min-width: 320px; opacity: 0; animation: fadeUp 0.7s ease forwards 0.1s; }
+.code-window {
+  flex: 1 1 560px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.1s;
+}
 
 .window-bar {
   display: flex;
@@ -148,7 +154,12 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
 }
 
 .code-body {
+  flex: 1;
   padding: 30px 26px;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: var(--font-mono);
   font-size: clamp(0.82rem, 1.6vw, 1.02rem);
   line-height: 2;
@@ -181,7 +192,7 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
 }
 .terminal-label .p { color: var(--green); }
 
-.browser-stack { position: relative; width: 100%; height: 400px; }
+.browser-stack { position: relative; width: 100%; height: 820px; }
 
 .browser-card {
   position: absolute;
@@ -397,7 +408,8 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
    ========================================================= */
 @media (max-width: 900px) {
   .hero { flex-direction: column; padding-top: 110px; }
-  .browser-stack { height: 380px; }
+  .browser-stack { height: 760px; }
+  .code-body { min-height: 400px; }
 }
 
 @media (max-width: 680px) {
@@ -438,9 +450,9 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
   .tab-link.active { border-top: none; border-left-color: var(--cyan); }
 
   .hero { padding: 100px 5% 40px; gap: 26px; }
-  .code-body { padding: 20px 16px; font-size: 0.74rem; line-height: 1.85; }
+  .code-body { padding: 20px 16px; min-height: 300px; font-size: 0.74rem; line-height: 1.85; }
   .ln { width: 16px; margin-right: 12px; }
-  .browser-stack { height: 340px; }
+  .browser-stack { height: 640px; }
 
   .section-about { padding: 60px 20px; }
   h2 { font-size: 1.7rem; }
@@ -450,3 +462,4 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
   .projects-grid { grid-template-columns: 1fr; }
   .section-projects { padding: 10px 5% 70px; }
 }
+
