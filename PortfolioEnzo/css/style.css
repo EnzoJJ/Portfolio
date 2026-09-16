@@ -194,7 +194,7 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
 }
 .terminal-label .p { color: var(--green); }
 
-.browser-stack { position: relative; width: 100%; height: 600px; }
+.browser-stack { position: relative; width: 100%; height: 550px; }
 
 .browser-card {
   position: absolute;
