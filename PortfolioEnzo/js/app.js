@@ -2,38 +2,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
   const links = navLinks ? navLinks.querySelectorAll('a') : [];
-  const logo = document.querySelector('.logo');
+  const logo = document.getElementById('logo');
 
   if (menuToggle && navLinks) {
     menuToggle.setAttribute('aria-expanded', 'false');
-    
+
     menuToggle.addEventListener('click', (e) => {
       e.stopPropagation(); // Evita que el click se propague al document
       const isActive = menuToggle.classList.toggle('active');
       navLinks.classList.toggle('active');
       menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-      console.log("Menú clickeado. Estado active:", navLinks.classList.contains('active'));
     });
   }
 
   // Cerrar al hacer click en los links
   links.forEach(link => {
     link.addEventListener('click', () => {
-      if(menuToggle) menuToggle.classList.remove('active');
-      if(navLinks) navLinks.classList.remove('active');
+      if (menuToggle) menuToggle.classList.remove('active');
+      if (navLinks) navLinks.classList.remove('active');
     });
   });
 
-  // Control del Logo
+  // Control del "logo" (file-path)
   if (logo) {
     logo.setAttribute('role', 'button');
     logo.setAttribute('tabindex', '0');
     const cerrarMenu = () => {
-      if(menuToggle) {
+      if (menuToggle) {
         menuToggle.classList.remove('active');
         menuToggle.setAttribute('aria-expanded', 'false');
       }
-      if(navLinks) navLinks.classList.remove('active');
+      if (navLinks) navLinks.classList.remove('active');
     };
     logo.addEventListener('click', cerrarMenu);
     logo.addEventListener('keydown', (e) => {
@@ -62,9 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Quitamos el evento 'scroll' porque rompe el comportamiento en móviles al desplegar
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 560 && menuToggle && navLinks) {
+    if (window.innerWidth > 680 && menuToggle && navLinks) {
       menuToggle.classList.remove('active');
       navLinks.classList.remove('active');
     }
@@ -72,32 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================
-   Efecto Parallax Background (Mantenelo igual)
-   ========================================== */
-const seccion = document.querySelector(".seccion-presentacion");
-if (seccion) {
-  const seccionWidth = window.innerWidth;
-  const seccionHeight = window.innerHeight;
-
-  document.addEventListener("mousemove", (event) => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    const xOffset = (mouseX / seccionWidth) * 2;
-    const yOffset = (mouseY / seccionHeight) * 2;
-    const movimientoMaximo = 10;
-    seccion.style.backgroundPosition = `${50 - xOffset * movimientoMaximo}% ${50 - yOffset * movimientoMaximo}%`;
-  });
-
-  seccion.addEventListener("mouseleave", () => {
-    seccion.style.backgroundPosition = "50% 50%";
-  });
-}
-
-/* ==========================================
-   Rotación de Tarjetas Publicidad (Mantenelo igual)
+   Rotación de proyectos destacados (hero)
    ========================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  const tarjetas = document.querySelectorAll('.card-publicidad');
+  const tarjetas = document.querySelectorAll('.browser-card');
   if (tarjetas.length > 0) {
     let indexActual = 0;
     const tiempoRotacion = 4000;
