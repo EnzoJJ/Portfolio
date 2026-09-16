@@ -131,6 +131,7 @@ h2 .brace { color: var(--cyan); font-weight: 500; }
 .code-window {
   flex: 1 1 560px;
   min-width: 320px;
+  max-height:600px;
   display: flex;
   flex-direction: column;
   opacity: 0;
